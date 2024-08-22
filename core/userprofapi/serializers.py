@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 #from .models import User, userprofilee
 
-
+'''
 class colorSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ['color_name']
         model = colour
-
+'''
 
 class userserializers(serializers.ModelSerializer):
     class Meta:
@@ -132,12 +132,13 @@ class PostaddressSerializer(serializers.ModelSerializer):
 
 #seconday way start
 
-
+'''
 class addressSerializer(serializers.ModelSerializer):
       class Meta:
         fields = ['addressUser']
         model = userprofilee
 
+'''
 
 
 
@@ -146,8 +147,7 @@ class addressSerializer(serializers.ModelSerializer):
 
 
 
-
-
+'''
 
 #seconday way end
 class PostdeleteSerializer(serializers.ModelSerializer):
@@ -162,7 +162,7 @@ class testmodelserial(serializers.ModelSerializer):
         fields = ('username', 'age')
         model = testmodel
    
-
+'''
 
 
 

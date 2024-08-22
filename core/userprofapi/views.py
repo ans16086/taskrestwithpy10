@@ -19,7 +19,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-'''
+
 @api_view(['GET','POST','DELETE','PUT','PATCH'])
 def userprofotest(request):
    if request.method == 'GET':
@@ -73,7 +73,7 @@ def userprofo(request):
             obj=testomodel.objects.get(id=data['id'])
             obj.delete()
             return Response({'message':'deleteddd'})  
-
+'''
 @permission_classes([AllowAny]) 
 @api_view(['POST'])            
 def registrationuser(request):
@@ -114,8 +114,8 @@ def login(request):
            print(password)
            user_exists = User.objects.filter(username=username).exists()
            print(f"User exists: {user_exists}")
-          # if not user_exists:
-            #    return Response({'status':'no user found'})
+           if not user_exists:
+                return Response({'status':'no user found'})
 
            try:
                     user_profile = deletebutton.objects.get(user=User.objects.get(username=username))
@@ -134,7 +134,7 @@ def login(request):
            return Response({'status':serializerss.data,'token':str(token)})
            
                 
-           
+'''         
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])     
 @api_view(['GET'])            
@@ -143,7 +143,7 @@ def show_data(request):
      #print(data)
    #  serializers= PostaddressSerializer(data)
      return Response({'status':'you are in','data':"data"})
-
+'''
 
 class person_data(APIView):
      permission_classes=[IsAuthenticated]
@@ -213,7 +213,7 @@ def registrationuser(request):
         return Response(serializer.errors)
 '''
 
-
+'''
 class person(APIView):
      def get(self,request):
          
@@ -229,3 +229,4 @@ class person(APIView):
                  serilizers.save()
                  return Response(serilizers.data) 
             return Response(serilizers.errors) 
+            '''
